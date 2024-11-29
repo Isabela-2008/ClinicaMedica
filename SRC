@@ -1,0 +1,64 @@
+create database ClínicaMédica;
+use ClínicaMédica;
+
+create table if not exists pacientes (
+id_paciente int auto_increment primary key,
+nome varchar(100),
+telefone varchar(15),
+data_nascimento date
+);
+
+create table if not exists medicos (
+id_medico int auto_increment primary key,
+nome varchar (100),
+especialidade varchar (100)
+);
+
+create table if not exists consultas (
+id_consulta int auto_increment primary key,
+id_paciente int,
+id_medico int,
+data_consulta datetime,
+valor decimal(10,2)
+);
+
+create table if not exists receita (
+id_receita int auto_increment primary key,
+id_consulta int,
+decricao_medicamentos varchar(100)
+);
+
+insert into pacientes (nome, telefone, data_nascimento) values
+("Maria","111111111111","2008-01-09"),
+("Jose","222222222222","2007-02-10"),
+("Ana","333333333333","2006-03-11"),
+("Clara","444444444444","2005-04-12"),
+("Pedro","555555555555","2004-05-13"),
+("Amanda","666666666666","2009-06-14"),
+("Mikael","777777777777","2010-07-15"),
+("Danyele","888888888888","2002-08-16");
+
+insert into medicos( nome, especialidade) values 
+("Cintya","Pediatra"),
+("RIcardo","Clinico Geral"),
+("Heitor","Pisciquiatra"),
+("Eduardo","Cirurgiao");
+
+insert into consultas (data_consulta, valor) values 
+("2024-11-27 15:00",10),
+("2024-11-29 18:00",90),
+("2024-11-01 17:00",80),
+("2024-11-08 14:00",70),
+("2024-10-18 13:00",60),
+("2024-10-15 16:00",50),
+("2024-09-07 12:00",40),
+("2024-09-30 09:00",30),
+("2024-10-22 11:00",50),
+("2024-06-19 19:00",55);
+
+insert into receita (descricao_medicamentos) values 
+("10g"),
+("20g"),
+("50ml"),
+("55g"),
+("15g");
