@@ -1,0 +1,56 @@
+Projeto: Sistema de Gestão de Clínica Médica
+
+Este projeto tem como objetivo desenvolver um sistema de gestão para uma clínica médica, permitindo o registro e gerenciamento de pacientes, médicos, consultas e receitas médicas. O banco de dados foi projetado para armazenar informações essenciais, como dados pessoais dos pacientes, especializações dos médicos, detalhes das consultas e medicamentos prescritos.
+
+README.md
+markdown
+# Sistema de Gestão de Clínica Médica  
+
+## Descrição  
+Este projeto é um sistema de gestão para clínicas médicas, desenvolvido para facilitar o registro e a administração de pacientes, médicos, consultas e receitas. O sistema utiliza um banco de dados relacional para armazenar informações essenciais, permitindo uma gestão eficiente.  
+
+## Estrutura do Banco de Dados  
+O banco de dados `ClínicaMédica` contém as seguintes tabelas:  
+
+1. **pacientes**  
+   - `id_paciente`: Identificador único do paciente (chave primária)  
+   - `nome`: Nome do paciente  
+   - `telefone`: Número de telefone do paciente  
+   - `data_nascimento`: Data de nascimento do paciente  
+
+2. **medicos**  
+   - `id_medico`: Identificador único do médico (chave primária)  
+   - `nome`: Nome do médico  
+   - `especialidade`: Especialidade do médico  
+
+3. **consultas**  
+   - `id_consulta`: Identificador único da consulta (chave primária)  
+   - `id_paciente`: Identificador do paciente (chave estrangeira)  
+   - `id_medico`: Identificador do médico (chave estrangeira)  
+   - `data_consulta`: Data e hora da consulta  
+   - `valor`: Valor da consulta  
+
+4. **receita**  
+   - `id_receita`: Identificador único da receita (chave primária)  
+   - `id_consulta`: Identificador da consulta (chave estrangeira)  
+   - `descricao_medicamentos`: Descrição dos medicamentos prescritos  
+
+## Instruções de Uso  
+1. **Configuração do Banco de Dados**  
+   - Certifique-se de ter um servidor MySQL em execução.  
+   - Execute os scripts SQL fornecidos para criar o banco de dados e as tabelas.  
+
+2. **Inserção de Dados**  
+   - Os dados de exemplo para pacientes, médicos, consultas e receitas já estão incluídos no script. Você pode adicionar, modificar ou excluir registros conforme necessário.  
+
+3. **Consultas e Manipulação de Dados**  
+   - Utilize comandos SQL para consultar e manipular os dados conforme suas necessidades.  
+
+## Tecnologias Utilizadas  
+- MySQL  
+
+## Contribuição  
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.  
+
+## Licença  
+Este projeto é de código aberto e está licenciado sob a [MIT License](LICENSE).  
